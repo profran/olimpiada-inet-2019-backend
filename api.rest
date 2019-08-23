@@ -1,0 +1,50 @@
+@host = localhost:3002
+
+GET http://{{host}} HTTP/1.1
+
+###
+
+POST http://{{host}}/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Francesco Silvetti",
+    "email": "francescosilvetti@gmail.com",
+    "password": "pepe1234"
+}
+
+###
+
+POST http://{{host}}/users/authenticate HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "francescosilvetti@gmail.com",
+    "password": "pepe1234"
+}
+
+###
+
+POST http://{{host}}/todos/ HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkMDI1OTU4MzllYzZhMWRhN2IzMzQyZiIsImlhdCI6MTU2MDQzNTA2MCwiZXhwIjoxNTYwNDM4NjYwfQ.oebHCnJm_cq1IqAWWDVNLPdTVRbfHcOC4Ch9GWKtmWM
+
+{
+    "title": "Third todo",
+    "desc": "It works, yay!"
+}
+###
+
+DELETE http://{{host}}/todos/ HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkMDI1OTU4MzllYzZhMWRhN2IzMzQyZiIsImlhdCI6MTU2MDQzNTA2MCwiZXhwIjoxNTYwNDM4NjYwfQ.oebHCnJm_cq1IqAWWDVNLPdTVRbfHcOC4Ch9GWKtmWM
+
+{
+    "todoId": "5d0259ad39ec6a1da7b33430"
+}
+
+###
+
+GET http://{{host}}/todos/ HTTP/1.1
+Content-Type: application/json
+Authorization: ewr{wiehrwiher}.eyJpZCI6IjVkMDI1OTU4MzllYzZhMWRhN2IzMzQyZiIsImlhdCI6MTU2MDQzNTA2MCwiZXhwIjoxNTYwNDM4NjYwfQ.oebHCnJm_cq1IqAWWDVNLPdTVRbfHcOC4Ch9GWKtmWM
